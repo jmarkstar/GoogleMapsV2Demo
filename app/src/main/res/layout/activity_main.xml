@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.jmarkstar.googlemapsv2demo.ui.MainActivity">
 
-    <fragment android:name="com.jmarkstar.googlemapsv2demo.ui.MapFragment"
+    <FrameLayout android:name="com.jmarkstar.googlemapsv2demo.ui.MapFragment"
     android:id="@+id/content_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
