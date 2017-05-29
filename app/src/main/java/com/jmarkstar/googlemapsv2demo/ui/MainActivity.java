@@ -1,15 +1,17 @@
 package com.jmarkstar.googlemapsv2demo.ui;
 
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.jmarkstar.googlemapsv2demo.R;
 import com.jmarkstar.googlemapsv2demo.database.dao.RestaurantDao;
 import com.jmarkstar.googlemapsv2demo.model.RestaurantModel;
 import java.util.ArrayList;
 
+/**
+ * @author jmarkstar
+ * */
 public class MainActivity extends AppCompatActivity
         implements MapFragment.OnMapFragmentInteractionListener {
 
@@ -30,10 +32,19 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void openMap(){
-        //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        //fragmentTransaction.replace(android.R.id.content, MapFragment.newInstance(restaurants));
-        //fragmentTransaction.commit();
-        Log.v(TAG, "openMap");
-        getSupportFragmentManager().beginTransaction().add(R.id.content_fragment, MapFragment.newInstance(restaurants)).commit();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.content_fragment, MapFragment.newInstance(restaurants)).commit();
+    }
+
+    @Override public void onMapReady() {
+        //TODO if you need to do something after the map is ready, you could do it here.
+    }
+
+    @Override public void onMapClick(LatLng latLng) {
+        //TODO if you need to do something when the user click the map, you could do it here.
+    }
+
+    @Override public void onMarkerClick(RestaurantModel restaurant, Marker marker) {
+        //TODO if you need to do something when the user click a marker, you could do it here.
     }
 }
